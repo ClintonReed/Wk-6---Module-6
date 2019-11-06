@@ -4,8 +4,8 @@ POST http://localhost:7071/api/add HTTP/1.1
 content-type: application/json
 
 {
-    "num1": 10,
-    "num2": 50
+    "num1": 1,
+    "num2": 2
 }
 
 ###
