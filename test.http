@@ -1,10 +1,10 @@
 ##
 
-POST http://localhost:7071/api/add HTTP/1.1
+POST https://csc322cer6functions.azurewebsites.net/api/add?code=WaBaCGfSQTLlT6TyFMdutTTem0z4ZLkTnrhbDBBxwnT4k5V3bK77Mg== HTTP/1.1
 content-type: application/json
 
 {
-    "num1": 1,
+    "num1": 5,
     "num2": 2
 }
 

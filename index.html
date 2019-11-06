@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Hello from CSC 322</h1>
+    <input id="add" type="button" value="-- ADD --" />
+
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+
+    <div id="result"></div>    
+
+</body>
+
+<script>
+    const userAction = async () => {
+        //const response = await fetch('http://localhost:7071/api/add', {
+        const response = await fetch('https://csc322cer6functions.azurewebsites.net/api/add?code=WaBaCGfSQTLlT6TyFMdutTTem0z4ZLkTnrhbDBBxwnT4k5V3bK77Mg==', {                          
+            method: 'POST',
+            body: JSON.stringify({ 'num1': parseInt(num1.value), 'num2': parseInt(num2.value) }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await response.json(); //extract JSON from the http response
+
+        console.log("data: " + JSON.stringify(data));
+
+        document.getElementById("result").innerHTML = "Sum of " + data.num1 + " + " + data.num2 + " = " +  data.sum;
+    }
+
+    //- Using an anonymous function for button click
+    document.getElementById("add").onclick = function () { 
+        userAction();    
+    };
+
+</script>
+
+</html>
